@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BetSmart.Models.BetListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Enter Bet", "Create", new { id = TempData["SportsBookId"] })
+</p>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#tab1">All</a></li>
+    <li><a data-toggle="tab" href="tab2">Won</a></li>
+    <li><a data-toggle="tab" href="tab3">Lost</a></li>
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Odds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToWin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DidWin)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Odds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToWin)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Total)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.DidWin)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BetId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BetId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BetId })
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back", "Index", "Sportsbook")
+</div>

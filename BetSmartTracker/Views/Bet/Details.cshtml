@@ -1,0 +1,74 @@
+﻿@model BetSmart.Models.BetDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BetDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SportsBookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SportsBookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BetId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BetId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToWin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToWin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DidWin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DidWin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
